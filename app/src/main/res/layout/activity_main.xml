@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/recordButton"
+        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:text="MULAI REKAM"
+        android:elevation="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonPickFile"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:elevation="0dp"
+        android:text="PILIH FILE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recordButton" />
+
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="PUTAR AUDIO"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonPickFile" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="SIMPAN FILE"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlay" />
+
+    <CheckBox
+        android:id="@+id/checkboxPitchShiftState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pakai pitch shift"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelFactor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Factor"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/checkboxPitchShiftState"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderFactor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="2dp"
+        android:value="1"
+        android:stepSize="0.1"
+        android:valueFrom="0.1"
+        android:valueTo="1.9"
+        app:layout_constraintTop_toBottomOf="@id/labelFactor"/>
+
+    <TextView
+        android:id="@+id/labelFileSizeBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ukuran file sebelum pitch shifting: "
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/sliderFactor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelFileSizeAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ukuran file setelah pitch shifting: "
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/labelFileSizeBefore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelFileLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/labelFileSizeAfter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/labelTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/labelFileLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
